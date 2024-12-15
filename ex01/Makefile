@@ -22,6 +22,7 @@ clean:
 	rm -f $(OBJS) $(NAME)
 fclean: clean
 	@${RM} ${NAME}
-	
+
+re: fclean all
 # Phony NAMEs (not associated with real files)
-.PHONY: all clean
+.PHONY: all clean fclean re $(NAME)

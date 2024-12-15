@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 
 #include <iostream>
+void ft_str_upper(char *str)
+{
+	while(*str)
+	{
+		if (*str >= 'a' && *str <= 'z')
+			*str -= 32;
+		str++;
+	}
+	return ;
+}
 
 int main(int argc, char **argv) {
 	if (argc == 1)
@@ -18,19 +28,11 @@ int main(int argc, char **argv) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"<< "\n";
 		return 0;
 	}
-	int i;
 	int j;
 	j = 1;
 	while(j < argc)
 	{
-		i = 0;
-		while(argv[j][i])
-		{
-			if (argv[j][i] >= 'a' && argv[j][i] <= 'z')
-				argv[j][i++] -= 32;
-			else
-				i++;
-		}
+		ft_str_upper(argv[j]);
 		std::cout << argv[j];
 		j++;
 	}
