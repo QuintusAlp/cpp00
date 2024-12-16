@@ -10,23 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Contacte.hpp"
 #include "PhoneBook.hpp"
-int ft_strcmp(char *str, char *str_cmp)
-{
-	while (*str && *str_cmp)
-	{
-		if (*str != *str_cmp)
-			return 0;
-		str++;
-		str_cmp++;
-	}
-	if (*str || *str_cmp)
-		return 0;
-	return 1;
-}
+
 int main(void){
-	PhoneBook		repertory;
+	PhoneBook	repertory;
 	Contact		contact;
 	std::string	command;
 	int			i;
@@ -35,19 +24,14 @@ int main(void){
 	while (1)
 	{
 		std::cout << "> ";
-    		std::getline(std::cin, command);
+    	std::getline(std::cin, command);
 		if (command == "add")
 		{
-			std::cout << "first name: ";
-			std::getline(std::cin, contact.first_name);
-			std::cout << "last name: ";
-			std::getline(std::cin, contact.last_name);
-			std::cout << "mick name: ";
-			std::getline(std::cin, contact.nick_name);
-			std::cout << "phone number: ";
-			std::getline(std::cin, contact.phone_number );
-			std::cout << "darkest secret: ";
-			std::getline(std::cin, contact.darkest_secret );
+			contact.get_first_name();
+			contact.get_last_name();
+			contact.get_nickname();
+			contact.get_phonenumber();
+			contact.get_darkestsecret();
 			repertory.add(contact, i++);
 		}
 		if (command == "search")
@@ -56,7 +40,7 @@ int main(void){
 			std::cout << "index: ";
 			std::cin >> index;
 			repertory.search(index);
-			std::cout << std::endl;
+			std::cout << "\n";
 		}
 		if (command == "exit")
 			break ;

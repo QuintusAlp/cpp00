@@ -13,6 +13,9 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 # include "Contacte.hpp"
+# include <iostream>
+# include <string>
+
 class PhoneBook{
 	private:
 		static const int size = 8;
@@ -25,7 +28,14 @@ class PhoneBook{
 			contacts[index] = contact;
 			index++;
 		}
-		void search(int index){
+		void search(int index)
+		{
+			if (contacts[index].isempty())
+			{
+				std::cout << "contact number " << index << "does not exist yet!\n";
+				return ;
+			}
+
 			contacts[index].display_first_name();
 			contacts[index].display_last_name();
 			contacts[index].display_nick_name();
