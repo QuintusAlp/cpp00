@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 #include "Contacte.hpp"
 #include "PhoneBook.hpp"
 int ft_strcmp(char *str, char *str_cmp)
